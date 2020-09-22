@@ -1,6 +1,10 @@
-# gym_counter
-Ipswich Gym People Counter
+Create /logs/last_line.csv
 
-Run the gym tracker shell to populate csv
+Run the shell script if you want to put the csv 
+puregym-tracker.sh
 
-run python3 graph.py to generate graph
+Run cronjob if you want to run the tracker and put the csv in your database
+
+You can run the shell script as a cronjob as well
+
+*/5 * * * * ./path/to/script/cronjob

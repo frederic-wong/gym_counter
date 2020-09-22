@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+home=/path/to/file
+table_name=table_name
+username=username
+password=password
+
+$home/puregym-tracker.sh $username $password
+
+rm $home/logs/last_line.csv && tail -1 $home/logs/data.csv >> $home/logs/last_line.csv
+
+psql -d postgres -c "COPY $table_name FROM '$home/logs/last_line.csv' delimiter ',' csv;"
